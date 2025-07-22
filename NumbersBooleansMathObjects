@@ -1,0 +1,168 @@
+//JavaScript Notes -- Working with Numbers, Booleans, and the Math Object -- 7/21/2025
+
+*/JavaScript does not use floating type numbers. They are all numbers.
+"nan" means "not a number". NaN is classified as number. 
+JavaScript allows Binary, Hexidecimal, and Octal.
+Octal is a base 8 system that uses digits 0-7
+Hexadecimal is a base 16 system that uses digits 0 to 9 and a to f./*
+
+---
+
+//"Type Coercion" is when a value from one data type (like a number) is converted into another data type (like a string)
+//Seems like usually the last data type is the one that converts all other data types
+
+---
+
+//Exponents are evaluated from right to left for some reason
+
+---
+
+//You can use compound assignment operators in Js like below
+//Original Problem
+let num = 5;
+num = num + 2;
+console.log(num); //7
+
+//Better way of doing it:
+let num = 5;
+num += 2;
+console.log(num); //7
+
+---
+
+//BOOLEANS
+let isOldEnoughToDrive = true;
+
+if (isOldEnoughToDrive) {
+	console.log("You're old enough to drive");
+} else {
+	console.log("Sorry, you are not old enough to drive");
+}
+
+---
+
+//"==" vs "==="
+//Using "===" will check both value and type to provide more predictable results
+
+---
+
+//Unary operators operate on a single operand. They are often used to perform increments, negating a value, or checking a type.
+//Below is an example of using a unary plus
+
+const str = "42";
+const strToNum = +str;
+
+console.log(strToNum); // 42
+console.log(typeof str); // string
+console.log(typeof strToNum); // number
+
+//Below is an example of using unary negation
+
+const str = "42";
+const strToNegativeNum = -str;
+
+console.log(strToNegativeNum); // -42
+console.log(typeof str); // string
+console.log(typeof strToNegativeNum); // number
+
+//The "bitwise not" operator is a unary operator "~"
+//This flips every bit in a binary code, meaning all 0's flip to 1's
+
+const num = 5; // The binary for 5 is 00000101
+console.log(~num); // -6
+
+//"Void" is a unary operator. It is frequently used in links to avoid navigation.
+<a href="javascript:void(0);">Click Me</a>
+
+---
+
+//BITWISE OPERATORS
+//The example below showcases the use of binary and bitwise operators
+
+let a = 5; //Binary: 101
+let b = 3; //Binary: 011
+console.log(a & b); //Output: 1 (binary: 001). This is 1 because "1" is both at the rightmost bit
+
+---
+
+//ELSE AND ELSE IF STATEMENTS EXAMPLE
+const score = 87;
+
+if (score >= 90) {
+  console.log("You got an A");
+} else if (score >= 80) {
+  console.log(You got a B"); //Output: You got a B
+} else if (score >= 70) {
+  console.log("You got a C);
+} else {
+  console.log("You failed!");
+}
+
+//THIS IS A TERNARY OPERATOR
+condition ? expressionIfTrue : expressionIfFalse; //syntax
+
+const temperature = 30;
+const weather = temperature > 25 ? "sunny" : "cool";
+console.log('It's a ${weather} day!'); //Output: It's a sunny day!
+
+---
+
+//THE "&&" OPERATOR
+//Will check if both operands are true and returns a result. Remember the TRUTHY AND FALSEY things
+
+//Example of a TRUTHY with "&&"
+const result = true && 'hello';
+console.log(result); //hello
+
+//Example of a FALSEY with "&&" because 0 is FALSEY
+const result = 0 && 3;
+console.log(result); // 0
+
+//This will return the FIRST FALSEY value
+const result = false && 0;
+console.log(result); // false
+
+//NULLISH COALESCING OPERATOR "??"
+//Helpful when you want to return a value only if the first one is null or undefined
+const result = null ?? 'default';
+console.log(result); //default
+
+---
+
+//math.random() generates a random floating-point number between 0 (inclusive) and 1 (exclusive)
+const randomNum = Math.random();
+console.log(randomNum); //Output: anything between 0 and 1
+
+//Min and Max
+const smallest = Math.min(1, 5, 3, 9);
+console.log(smallest); //1
+
+const largest = Math.max(1, 5, 3, 9);
+console.log(largest; //9
+
+//Ceiling and floor
+console.log(Math.ceil(4.3)); // 5
+
+console.log(Math.floor(4.7)); // 4
+
+//Round is like ceiling and floor but picks whatever is closer
+console.log(Math.round(2.3)); // 2
+
+//Example of generation a random number between 1 and 20
+const number = Math.floor(Math.random() * 20) + 1;
+console.log(number) // 1-20
+
+//Truncating
+console.log(Math.trunc(2.9)); // 2
+
+//Finding the square root or cubic root
+console.log(Math.sqrt(81)); // 9
+console.log(Math.cbrt(27)); // 3
+
+//Finding absolute number
+console.log(Math.abs(-5)); // 5
+console.log(Math.abs(5)); // 5
+
+//Finding the power
+console.log(Math.pow(2, 3)); // 8
+console.log(Math.pow(8, 2)); // 64
