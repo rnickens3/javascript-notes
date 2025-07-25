@@ -1,0 +1,24 @@
+// UNDERSTANDING COMPARISONS AND CONDITIONALS
+// In these lecture videos, you will learn about comparison operators and conditionals. You will learn how the various conditionals differ from one another, and how comparisons work with null and undefined.
+
+---
+
+//Undefined will mostly return false, but NaN is odd
+
+---
+
+//SWITCH STATEMENTS
+//Without "default" the program will go through many more statements, which is something called "fall through"
+//Switch statements use strict comparison (===)
+switch (expression) {
+  case value1:
+    // code goes here
+    break;
+  case value2:
+    // code goes here
+    break;  
+  case value3:
+    // code goes here
+  default:
+    // code that executes if expression doesn't match any case
+}
