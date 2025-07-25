@@ -1,0 +1,37 @@
+//WORKING WITH NUMBERS AND COMMON NUMBER METHODS -- July 22nd, 2025
+
+---
+
+//WHAT IS NaN AND HOW DOES isNaN WORK?
+//The "isNaN()" function checks whether a value is NaN or not
+//However, "Number.isNaN()" is a better way of checking this. It does not try to convert the object it is checking
+
+---
+
+//HOW DO THE PARSEFLOAT AND PARSEINT METHODS WORK
+//These methods are great for user input or processing strings but needs to be treated as a numerical value
+//Both of these methods ignore white space
+
+//"parseFloat()" parses a string argument and returns a floating-point number
+console.log(parseFloat("3.14")); //Output: 3.14
+console.log(parseFloat("3.14 abc")); //Output: 3.14
+console.log(parseFloat("3.14.5")); //Output: 3.14
+console.log(parseFloat("abc 3.14")); //Output: NaN
+
+//"parseInt()" parses a string argument and returns an integer
+console.log(parseInt("42")); //Output: 42
+console.log(parseInt("42px")); //Output: 42
+console.log(parseInt("3.14")); //Output: 3
+console.log(parseInt("abc123")); //Output: NaN
+
+---
+
+//WHAT IS THE "TOFIXED" METHOD AND HOW DOES IT WORK?
+//"toFixed()" formats a number using fixed-point notation. This controls the decimal place. 
+//This returns a string and not a number
+//This rounds up by default
+let price = 19.99;
+let taxRate = 0.08;
+let total = price + (price * taxRate);
+
+console.log("Total: $" + total.toFixed(2)); //Output: "Total: $21.59"
