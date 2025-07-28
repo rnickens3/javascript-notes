@@ -1,0 +1,90 @@
+//WORKING WITH FUNCTIONS
+//In these lecture videos, you will learn how to reuse a block of code with functions. You will learn what the purpose of a function is and how they work, and how scope works in programming.
+
+---
+
+//What Is the Purpose of Functions, and How Do They Work?
+
+//Declaring a function
+function greet() {
+   console.log("Hello, Jessica!");
+}
+
+//Calling a function
+greet(); //Output: "Hello, Jessica!"
+
+//Updated function with Parameters
+function greet(name) {
+  console.log("Hello, " + name + "!");
+}
+
+greet("Alice"); //Output: Hello, Alice!
+greet("Nick"); //Output: Hello, Nick!
+
+//The return statement
+//The default return value of a function if no return statement is specified is undefined
+function calculateSum(num1, num2) {
+  return num1 + num2;
+}
+
+console.log(calculateSum(3,4)); //Output: 7
+
+//Anonymous functions
+//In this case, the variable is assigned a function
+const sum = function (num1, num2) {
+  return num1 + num2;
+};
+
+console.log(sum(3, 4)); //Output: 7
+
+//Setting a default parameter for a function
+function greetings(name = "Guest") {
+   console.log("Hello, " + name + "!");
+}
+
+greetings(); //Hello, Guest!
+greetings("Anna"); //Hello, Anna!
+
+---
+
+//What Are Arrow Functions, and How Do They Work?
+//If there is only one parameter like the example below, you can actually forgo the parathesis. In this case, (name) could be simply name.
+//If there are no parameters, you must place (). In the example below, if "Name" wasn't there, you'd need to put () in its place. 
+//If there is only one thing in the body, you can forgo the {} as well
+
+//Most basic example of writing an arrow function
+const greetings = (name) => {
+  console.log("Hello, " + name + "!");
+};
+
+//The chad way of writing the function above
+const greetings = name => console.log("Hello, " + name + "!");
+
+//What does "return" do?
+const calculateArea = (width, height) => {
+  const area = width * height;
+  return area;
+};
+
+console.log(calculateArea(5, 3)); // 15
+
+//The code above can be cleaned up by returning the calculation itself
+const calculateArea = (width, height) => {
+  return width * height;
+};
+
+---
+
+//WHAT IS SCOPE IN PROGRAMMING, AND HOW DOES GLOBAL, LOCAL, AND BLOCK SCOPE WORK?
+//Global: accessible anywhere in code
+let globalVar
+
+//Local: only accessible within a function
+function greet() {
+  let message = "Hello, local scope!";
+  console.log(message);
+}
+greet(); //Output: "Hello, local scope!"
+console.log(message); //This is an error
+
+//Block: any code section within curly braces. 
