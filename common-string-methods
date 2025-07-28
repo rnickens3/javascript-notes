@@ -1,0 +1,94 @@
+//JavaScript Notes - Working with Common String Methods 7/20/2025
+
+//To check if a string includes a substring, use the "includes" method
+string.includes(searchValue); //syntax
+
+//Example
+let phrase = "JavaScript is awesome!";
+let result = phrase.includes("awesome");
+
+console.log(result); //true
+
+
+//To skip a substring, there is a second part of the include method
+let text = "Hello, JavaScript world!";
+let result = text.includes("JavaScript", 7);
+
+console.log(result); //true
+
+---
+
+//"slice() method" allows you to extract a portion of a string and returns a new string, without modifying the original string
+string.slice(startIndex, endIndex); //syntax
+
+//Example
+let message = "Hello, world!";
+let greeting = message.slice(0, 5);
+
+console.log(greeting); //Output: Hello
+
+//Example without second parameter
+let message = "Hello, world!";
+let greeting = message.slice(7);
+
+console.log(greeting); //Output: world!
+
+//Example using negative numbers. This extracts the last four characters from the string
+let message = "JavaScript is fun!";
+let lastWord = message.slice(-4);
+
+console.log(lastWord); //Output: fun!
+
+---
+
+//toUpperCase and toLowerCase changes the respective letters for things like titles
+
+//Example
+let greeting = "Hello, World!";
+let uppercaseGreeting = greeting.toUpperCase();
+
+console.log(uppercaseGreeting); //Output: "HELLO, WORLD!"
+
+//Same thing with lower case
+
+---
+
+//Replacing parts of a string with another string
+//ONLY THE FIRST VALUE WILL BE REPLACED IF THERE ARE MULTIPLE
+string.replace(searchValue, newValue); //syntax
+
+//Example
+let text = "I love JavaScript!";
+let newText = text.replace("JavaScript", "coding");
+
+console.log(newText); //Output: "I love coding!"
+
+---
+
+//Repeating a string x number of times
+//Count can't be negative or infinite values. Decimals will return the value rounded down. 0 will return nothing.
+string.repeat(count); //syntax
+
+//Example
+let word = "Hello!";
+let repeatedWord = word.repeat(3);
+console.log(repeatedWord); //Output: "Hello!Hello!Hello!"
+
+---
+
+//Trimming whitespace from a string
+
+//Example of regular trim
+let message = "    Hello!    ";
+let trimmedMessage = message.trim();
+console.log(trimmedMessage); //Output: "Hello!"
+
+//Example of trimStart
+let message = "    Hello!    ";
+let trimmedMessage = message.trimStart();
+console.log(trimmedMessage); //Output: "Hello!       "
+
+//Example of trimEnd
+let message = "    Hello!    ";
+let trimmedMessage = message.trimEnd();
+console.log(trimmedMessage); //Output: "        Hello!"
